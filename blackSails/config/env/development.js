@@ -17,8 +17,18 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-  // models: {
-  //   connection: 'someMongodbServer'
-  // }
+   connections: {
+    someMongodbServer: {
+      adapter: 'sails-mongo',
+      host: 'localhost',
+      port: 27017,
+      // user: 'username',
+      // password: 'password',
+      database: 'bunitaoDB'
+    }
+  },
+  models: {
+    connection: "someMongodbServer"
+  }
 
 };
