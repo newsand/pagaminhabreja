@@ -1,0 +1,5 @@
+
+mongoimport --db bunitaoDB --collection prod --type json --file producao.json --jsonArray
+
+
+sails generate controller prod ri pt sis uuid

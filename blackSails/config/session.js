@@ -74,9 +74,10 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-  // adapter: 'mongo',
-  // url: 'mongodb://user:password@localhost:27017/dbname', // user, password and port optional
 
+    adapter: 'mongo',
+    url: 'mongodb://localhost:27017/bunitaoDB',
+    //collection: 'sessions',
   /***************************************************************************
   *                                                                          *
   * Optional Values:                                                         *
