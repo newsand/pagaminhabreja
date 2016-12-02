@@ -38,3 +38,30 @@ exports.getTest = function(req, res) {
     res.badRequest();
   }
 };
+
+exports.findusCreatus = function(req, res) {
+    var params = req.params.all();
+  if (params.hi) {
+    tester.findOrCreate({'hi': params.hi}, function(err, result) {
+      if (err) return res.badRequest();
+      return res.json({'hi': params.hi, 'views':result.views})
+    });
+  }
+};
+
+exports.creatusUpdatus = function(req, res) {
+    var params = req.params.all();
+  if (params.hi) {
+    console.log(params);
+    tester.findOrCreate({'hi': params.hi}, function(err, result) {
+      if (err) return res.badRequest(err);
+      console.log(result);
+      tester.update({'hi': params.hi},{'views':result.views+1},function(err, jesus)
+      {
+        console.log(jesus);
+        return res.json({'hi': jesus.hi, 'views':jesus.views})
+      });
+      console.log(result);
+    });
+  }
+};

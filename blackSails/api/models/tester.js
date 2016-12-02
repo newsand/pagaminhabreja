@@ -9,10 +9,15 @@ module.exports = {
   attributes: {
     // Hardware ID
     hi: {
-      type: 'integer',
+      type: 'string',
       index: true,
       required: true,
       unique: true
     },
+    views: {
+      type: 'integer',
+      required: true,
+      defaultsTo: 1
+    }
   }
 };
